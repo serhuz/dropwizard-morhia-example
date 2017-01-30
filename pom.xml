@@ -23,6 +23,7 @@
     <groupId>xyz.randomcode</groupId>
     <artifactId>dropwizard-morhia-example</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <properties>
         <dropwizard.version>1.0.5</dropwizard.version>

@@ -1,0 +1,20 @@
+{
+  "name": "Dropwizard-Morphia Example",
+  "description": "Morphia bundle usage example",
+  "repository": "https://github.com/serhuz/dropwizard-morhia-example",
+  "success_url": "/swagger",
+  "keywords": [
+    "java",
+    "dropwizard",
+    "mongodb",
+    "morphia"
+  ],
+  "addons": [
+    {
+      "plan": "mongolab:sandbox"
+    },
+    {
+      "plan": "papertrail:choklad"
+    }
+  ]
+}

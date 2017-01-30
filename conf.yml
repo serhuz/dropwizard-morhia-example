@@ -1,7 +1,6 @@
 mongo:
   type: uriConfig
-  uri: mongodb://heroku_gvklv411:4vfuu7vgqvgkpm8ka9k8ahgha3@ds135049.mlab.com:35049/heroku_gvklv411
-  dbName: heroku_gvklv411
+  uri: ${MONGODB_URI}
 
 swagger:
   resourcePackage: xyz.randomcode.dropwizard_morphia.example.api
@@ -16,7 +15,7 @@ server:
     - POST
   connector:
     type: http
-    port: 8080 #${PORT}
+    port: ${PORT}
 
 logging:
   level: INFO
