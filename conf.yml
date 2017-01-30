@@ -1,0 +1,26 @@
+mongo:
+  type: uriConfig
+  uri: mongodb://heroku_gvklv411:4vfuu7vgqvgkpm8ka9k8ahgha3@ds135049.mlab.com:35049/heroku_gvklv411
+  dbName: heroku_gvklv411
+
+swagger:
+  resourcePackage: xyz.randomcode.dropwizard_morphia.example.api
+  title: Example API
+  version: 1.0
+
+server:
+  type: simple
+  applicationContextPath: /
+  allowedMethods:
+    - GET
+    - POST
+  connector:
+    type: http
+    port: 8080 #${PORT}
+
+logging:
+  level: INFO
+  loggers:
+    xyz.randomcode.dropwizard_morphia.example: DEBUG
+  appenders:
+    - type: console
