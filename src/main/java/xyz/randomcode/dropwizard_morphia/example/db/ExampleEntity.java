@@ -16,6 +16,7 @@
 
 package xyz.randomcode.dropwizard_morphia.example.db;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.swagger.annotations.ApiModelProperty;
@@ -31,7 +32,7 @@ import xyz.randomcode.dropwizard_morphia.example.core.ObjectIdSerializer;
 @Entity(noClassnameStored = true)
 public class ExampleEntity {
 
-    @ApiModelProperty(dataType = "string")
+    @ApiModelProperty(dataType = "string", example = "5a40062959fbb10004c4f557")
     @JsonSerialize(using = ObjectIdSerializer.class)
     @JsonDeserialize(using = ObjectIdDeserializer.class)
     @Id
@@ -48,18 +49,22 @@ public class ExampleEntity {
         this.name = name;
     }
 
+    @JsonProperty
     public ObjectId getId() {
         return id;
     }
 
+    @JsonProperty
     public void setId(ObjectId id) {
         this.id = id;
     }
 
+    @JsonProperty
     public String getName() {
         return name;
     }
 
+    @JsonProperty
     public void setName(String name) {
         this.name = name;
     }

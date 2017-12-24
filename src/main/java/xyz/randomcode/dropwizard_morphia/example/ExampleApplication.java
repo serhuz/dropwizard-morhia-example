@@ -17,6 +17,8 @@
 package xyz.randomcode.dropwizard_morphia.example;
 
 import io.dropwizard.Application;
+import io.dropwizard.configuration.EnvironmentVariableSubstitutor;
+import io.dropwizard.configuration.SubstitutingSourceProvider;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import io.federecio.dropwizard.swagger.SwaggerBundle;
@@ -45,6 +47,10 @@ public class ExampleApplication extends Application<ExampleConfiguration> {
 
     @Override
     public void initialize(Bootstrap<ExampleConfiguration> bootstrap) {
+        bootstrap.setConfigurationSourceProvider(new SubstitutingSourceProvider(
+                bootstrap.getConfigurationSourceProvider(),
+                new EnvironmentVariableSubstitutor(false)
+        ));
         bootstrap.addBundle(morphiaBundle);
         bootstrap.addBundle(new SwaggerBundle<ExampleConfiguration>() {
             @Override

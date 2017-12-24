@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>xyz.randomcode</groupId>
-    <artifactId>dropwizard-morhia-example</artifactId>
+    <artifactId>dropwizard-morphia-example</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -17,6 +17,17 @@
         <mongo-embed.version>1.50.5</mongo-embed.version>
         <main.class>xyz.randomcode.dropwizard_morphia.example.ExampleApplication</main.class>
     </properties>
+
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>bintray-serhuz-maven</id>
+            <name>bintray</name>
+            <url>http://dl.bintray.com/serhuz/maven</url>
+        </repository>
+    </repositories>
 
     <dependencyManagement>
         <dependencies>

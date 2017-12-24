@@ -5,11 +5,14 @@ mongo:
 swagger:
   resourcePackage: xyz.randomcode.dropwizard_morphia.example.api
   title: Example API
+  schemes:
+    - https
   version: 1.0
 
 server:
   type: simple
   applicationContextPath: /
+  adminContextPath: /admin
   allowedMethods:
     - GET
     - POST
